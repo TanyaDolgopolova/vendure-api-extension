@@ -7,6 +7,7 @@ import {
 import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
 import { AssetServerPlugin } from '@vendure/asset-server-plugin';
 import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
+import {RandomCatPlugin} from "./plugins/RandomCatPlugin";
 import path from 'path';
 
 export const config: VendureConfig = {
@@ -52,6 +53,7 @@ export const config: VendureConfig = {
     },
     customFields: {},
     plugins: [
+        RandomCatPlugin,
         AssetServerPlugin.init({
             route: 'assets',
             assetUploadDir: path.join(__dirname, '../static/assets'),
